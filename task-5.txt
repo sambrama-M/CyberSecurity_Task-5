@@ -1,0 +1,56 @@
+										Task 5  : Capture and Analyze Network Traffic Using Wireshark.
+ 
+
+Objective: Capture live network packets and identify basic protocols and traffic types.
+ Tools: Wireshark (free).
+ Deliverables:  A packet capture (.pcap) file and a short report of protocols identified
+
+
+
+
+--> Steps Performed:
+
+1. Installed Wireshark]and launched the application.
+
+2. Selected the active network interface – in this case, Ethernet0.
+
+3. Started capturing packets on Ethernet0.
+
+4. To generate network traffic:
+
+   * Opened YouTube to create multimedia traffic (video streaming).
+   * Used the ping command to contact an external server (generates ICMP traffic).
+   * Visited a dummy website using the HTTP protocol (non-secure).
+
+5. On the HTTP site, entered dummy login credentials: `username/admin123`.
+
+6. After about a minute, stopped the capture.
+
+
+--> Key Observations:
+
+* Searched for the entered credentials in the captured traffic.
+* Found the username and password clearly visible in HTTP packets.
+* This demonstrates packet sniffing, where data can be read if the connection is not encrypted.
+* Realized that HTTP is not safe for transmitting sensitive data — always use HTTPS.
+
+
+--> Protocol Analysis:
+
+* Filtered and identified several protocols from the capture:
+
+  * TCP – used for reliable communication (e.g., YouTube traffic).
+  * UDP – used for faster, connectionless traffic.
+  * ICMP – from ping commands.
+  * HTTP – captured from the dummy login site.
+
+* Exported filtered packets into separate `.pcap` files (e.g., `tcp_.pcap`, `udp_.pcap`, etc.) for further analysis or submission.
+
+
+--> Conclusion / Learnings:
+
+* Tools like Wireshark can expose how data travels over a network.
+* Unsecured protocols (like HTTP) can leak private information.
+* Always ensure websites use HTTPS to keep credentials and data safe.
+* Learned how to capture, analyze, filter, and export network traffic.
+
